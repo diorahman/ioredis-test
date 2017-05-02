@@ -1,5 +1,5 @@
 {
-  "name": "ioredis-test",
+  "name": "redis-async",
   "version": "1.0.0",
   "description": "Test redis cluster and simple redis",
   "main": "index.js",
