@@ -22,5 +22,16 @@
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "mocha": "^3.3.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diorahman/ioredis-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diorahman/ioredis-test/issues"
+  },
+  "homepage": "https://github.com/diorahman/ioredis-test#readme"
 }
