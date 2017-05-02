@@ -1,6 +1,6 @@
 {
   "name": "redis-async",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Async clustered and simple redis client",
   "main": "index.js",
   "scripts": {
