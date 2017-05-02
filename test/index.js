@@ -9,6 +9,10 @@ const redis = require('../')
 const Redis = require('ioredis')
 const assert = require('assert')
 
+if (process.env.REDIS_CLUSTER_NODES) {
+  console.log('we have a cluster!')
+}
+
 describe('ok', () => {
   describe('redis', () => {
     it('is instanceof', () => {
