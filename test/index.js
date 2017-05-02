@@ -12,7 +12,11 @@ const assert = require('assert')
 describe('ok', () => {
   describe('redis', () => {
     it('is instanceof', () => {
-      assert.ok(redis instanceof Redis)
+      if (process.env.REDIS_CLUSTER_NODES) {
+        assert.ok(redis instanceof Redis.Cluster)
+      } else {
+        assert.ok(redis instanceof Redis)
+      }
     })
 
     it('functions', () => {
@@ -29,7 +33,11 @@ describe('ok', () => {
 
   describe('redis2', () => {
     it('is instanceof', () => {
-      assert.ok(redis2 instanceof Redis)
+      if (process.env.REDIS_CLUSTER_NODES) {
+        assert.ok(redis2 instanceof Redis.Cluster)
+      } else {
+        assert.ok(redis2 instanceof Redis)
+      }
     })
 
     it('functions', () => {
