@@ -9,8 +9,7 @@ python:
 services:
   - redis-server
 
-install: make travis-install
-script: make travis-run
+before_install: make travis-install
 
 env:
   - REDIS_HOST=localhost
