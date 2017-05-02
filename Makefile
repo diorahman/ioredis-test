@@ -85,8 +85,8 @@ help:
 	@echo "  start             starts a test redis cluster"
 	@echo "  cleanup           cleanup config files after redis cluster"
 	@echo "  stop              stops all redis servers"
-	@echo "  travis-run        starts the redis cluster and runs your tests"
-	@echo "  travis-install    install redis from 'unstable' branch"
+	@echo "  cluster-run        starts the redis cluster and runs your tests"
+	@echo "  cluster-install    install redis from 'unstable' branch"
 
 start: cleanup
 	echo "$$NODE1_CONF" | redis-server -
@@ -110,7 +110,7 @@ stop:
 	kill `cat /tmp/redis_cluster_node6.pid` || true
 	make cleanup
 
-travis-run:
+cluster-run:
 	# Start all cluster nodes
 	make start
 	sleep 5
@@ -119,7 +119,7 @@ travis-run:
 	echo "yes" | ruby redis-git/src/redis-trib.rb create --replicas 1 127.0.0.1:7000 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005
 	sleep 5
 
-travis-install:
+cluster-install:
 	[ ! -e redis-git ] && git clone https://github.com/antirez/redis.git redis-git || true
 	make -C redis-git -j4
 	gem install redis

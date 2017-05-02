@@ -10,8 +10,8 @@ services:
   - redis-server
 
 before_install: 
-  - make travis-install
-  - make travis-run
+  - make cluster-install
+  - make cluster-run
 
 env:
   - REDIS_HOST=localhost REDIS_PORT=6379
