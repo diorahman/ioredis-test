@@ -119,11 +119,6 @@ travis-run:
 	echo "yes" | ruby redis-git/src/redis-trib.rb create --replicas 1 127.0.0.1:7000 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005
 	sleep 5
 
-	npm test
-
-	# Kill all redis nodes and do cleanup
-	make stop
-
 travis-install:
 	[ ! -e redis-git ] && git clone https://github.com/antirez/redis.git redis-git || true
 	make -C redis-git -j4
