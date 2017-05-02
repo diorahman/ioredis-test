@@ -1,7 +1,7 @@
 {
   "name": "redis-async",
   "version": "1.0.0",
-  "description": "Test redis cluster and simple redis",
+  "description": "Async clustered and simple redis client",
   "main": "index.js",
   "scripts": {
     "test": "babel-node ./node_modules/.bin/_mocha"
